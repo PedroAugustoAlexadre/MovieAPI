@@ -1,18 +1,22 @@
 spring:
   application:
     name: movieApi
+
   datasource:
     url: jdbc:h2:mem:cinetrackdb;DB_CLOSE_DELAY=-1
     driverClassName: org.h2.Driver
     username: sa
     password:
-    h2:
+
+  h2:
     console:
       enabled: true
       path: /h2-console
+
   flyway:
     enabled: true
     baseline-on-migrate: true
+
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     show-sql: true
@@ -21,4 +25,3 @@ spring:
     properties:
       hibernate:
         format_sql: true
-

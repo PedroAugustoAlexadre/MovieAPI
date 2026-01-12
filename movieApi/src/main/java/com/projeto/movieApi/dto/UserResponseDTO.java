@@ -1,4 +1,4 @@
-package com.projeto.movieApi.controller;
+package com.projeto.movieApi.dto;
 
 public record UserResponseDTO(
     Long id,
