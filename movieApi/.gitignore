@@ -1,4 +1,20 @@
-./.idea
-./.mvn
-./Movie Api
+### Java e Maven ###
+target/
+*.class
+*.jar
+*.war
+*.ear
 
+### IntelliJ IDEA ###
+.idea/
+*.iml
+out/
+gen/
+
+### Maven Wrapper ###
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+
+### Sistema Operacional ###
+.DS_Store
+Thumbs.db

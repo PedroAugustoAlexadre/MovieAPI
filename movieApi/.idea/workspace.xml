@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1ff0142-889e-494e-8d57-e4e07a8070c4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/projeto/movieApi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projeto/movieApi/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/projeto/movieApi/controller/UserResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projeto/movieApi/dto/UserResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/projeto/movieApi/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/projeto/movieApi/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/projeto/movieApi/controller/UserResponseDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/projeto/movieApi/dto/UserDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/projeto/movieApi/dto/UserDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/projeto/movieApi/repository/MovieRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/projeto/movieApi/repository/MovieRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/projeto/movieApi/repository/UserMovieRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/projeto/movieApi/repository/UserMovieRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/projeto/movieApi/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/projeto/movieApi/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/projeto/movieApi/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/projeto/movieApi/service/UserService.class" afterDir="false" />
-    </list>
+    <list default="true" id="f1ff0142-889e-494e-8d57-e4e07a8070c4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
