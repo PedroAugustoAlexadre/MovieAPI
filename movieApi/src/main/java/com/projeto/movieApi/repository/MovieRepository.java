@@ -1,7 +1,6 @@
 package com.projeto.movieApi.repository;
 
 import com.projeto.movieApi.model.Movie;
-import com.projeto.movieApi.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
