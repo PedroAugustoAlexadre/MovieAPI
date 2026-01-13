@@ -5,11 +5,20 @@ meta {
 }
 
 post {
-  url: 
-  body: none
+  url: http://localhost:8080/users
+  body: json
   auth: inherit
+}
+
+body:json {
+  {
+    "username": "ronal",
+    "email": "emailTest2@gmail.com",
+    "password": "1234"
+  }
 }
 
 settings {
   encodeUrl: true
+  timeout: 0
 }

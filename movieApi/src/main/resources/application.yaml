@@ -25,3 +25,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  tmdb:
+    api:
+      url: https://api.themoviedb.org/3
+      token: ${TMDB_API_TOKEN}

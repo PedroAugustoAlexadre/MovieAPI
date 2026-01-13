@@ -1,0 +1,22 @@
+package com.projeto.movieApi.client;
+
+import com.projeto.movieApi.dto.MovieResponseDTO;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@FeignClient(
+        name = "TmdbSearchClient",
+        url =  "${tmdb.api.url}"
+)
+public interface TmdbSearchClient {
+
+    @GetMapping("/search/movie")
+    MovieResponseDTO getMovies(
+            @RequestHeader("Authorization") String BearerToken,
+            @RequestParam("query") String query,
+            @RequestParam("language") String language           // Ex: pt-BR
+    );
+
+}
