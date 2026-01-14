@@ -22,9 +22,9 @@ public interface TmdbSearchClient {
             @RequestParam("language") String language
     );
 
-    @GetMapping("/movie/{movie_id}")
-    TmdbResponseDTO getMovie(
-            @PathVariable Long id,
-            @RequestHeader String BearerToken
+    @GetMapping("/movie/{id}")
+    MovieResponseDTO getMovie(
+            @RequestHeader("Authorization") String BearerToken,
+            @PathVariable Long id
     );
 }

@@ -30,6 +30,9 @@ public class Movie {
     @Column(columnDefinition = "TEXT")
     private String overview;
 
+    @Column(columnDefinition = "TEXT")
+    private String originalLanguage;
+
     @Column(name = "poster_path")
     private String posterPath;
 
@@ -39,8 +42,8 @@ public class Movie {
     @Column(name = "release_date")
     private String releaseDate;
 
-    @Column(name = "vote_average")
+    private Double popularity;
+
     private Double voteAverage;
 
-    private Double popularity;
 }

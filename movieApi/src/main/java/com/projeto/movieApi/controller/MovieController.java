@@ -1,14 +1,9 @@
 package com.projeto.movieApi.controller;
 
 import com.projeto.movieApi.dto.MovieResponseDTO;
-import com.projeto.movieApi.dto.TmdbResponseDTO;
 import com.projeto.movieApi.service.MovieService;
-import feign.Response;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,6 +24,22 @@ public class MovieController {
         List<MovieResponseDTO> movies = movieService.getMovies(query, lang);
 
         return ResponseEntity.ok(movies);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<MovieResponseDTO> getMovie(@PathVariable Long id) {
+
+        MovieResponseDTO movie = movieService.getMovie(id);
+
+        return ResponseEntity.ok(movie);
+    }
+
+    @PostMapping("/{id}")
+    public ResponseEntity<MovieResponseDTO> saveMovie(@PathVariable Long id) {
+
+        MovieResponseDTO movie = movieService.saveMovie(id);
+
+        return ResponseEntity.ok(movie);
     }
 
 }

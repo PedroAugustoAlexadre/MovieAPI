@@ -30,7 +30,6 @@ public class UserController {
         ).toList();
 
         return ResponseEntity.status(HttpStatus.OK).body(responseDTOList);
-
     }
 
     @PostMapping

@@ -1,15 +1,21 @@
 meta {
   name: Movies get
   type: http
-  seq: 5
+  seq: 6
 }
 
 get {
-  url: 
+  url: http://localhost:8080/movies?query=batman&lang=en-US
   body: none
   auth: inherit
 }
 
+params:query {
+  query: batman
+  lang: en-US
+}
+
 settings {
   encodeUrl: true
+  timeout: 0
 }

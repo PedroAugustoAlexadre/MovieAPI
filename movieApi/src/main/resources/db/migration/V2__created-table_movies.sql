@@ -3,6 +3,7 @@ CREATE TABLE movies (
     tmdb_id BIGINT NOT NULL UNIQUE,
     title VARCHAR(255) NOT NULL,
     original_title VARCHAR(255),
+    original_language VARCHAR(8),
     overview TEXT,
     poster_path VARCHAR(255),
     backdrop_path VARCHAR(255),
