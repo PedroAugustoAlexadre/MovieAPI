@@ -29,4 +29,13 @@ public class MovieService {
         return response.results();
     }
 
+    public List<MovieResponseDTO> getMovie(Long id) {
+
+        String bearerToken = "Bearer " + apiToken;
+
+        TmdbResponseDTO response = tmdbSearchClient.getMovie(id, bearerToken);
+
+        return  response.results();
+
+    }
 }
