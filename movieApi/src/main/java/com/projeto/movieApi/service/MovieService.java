@@ -46,46 +46,25 @@ public class MovieService {
     }
 
     @Transactional
-    public MovieResponseDTO saveMovie(Long tmdbId) {
+    public Movie getOrCreateMovie(Long tmdbId) {
+        return movieRepository.findByTmdbId(tmdbId)
+                .orElseGet(() -> {
+                    String bearerToken = "Bearer " + apiToken;
+                    MovieResponseDTO response = tmdbSearchClient.getMovie(bearerToken, tmdbId);
 
-        Optional<Movie> movieOptional = movieRepository.findByTmdbId(tmdbId);
+                    Movie movie = new Movie();
+                    movie.setTmdbId(response.id());
+                    movie.setTitle(response.title());
+                    movie.setOriginalTitle(response.originalTitle());
+                    movie.setOverview(response.overview());
+                    movie.setOriginalLanguage(response.originalLanguage());
+                    movie.setPosterPath(response.posterPath());
+                    movie.setBackdropPath(response.backdropPath());
+                    movie.setReleaseDate(response.releaseDate());
+                    movie.setVoteAverage(response.voteAverage());
 
-        if (movieOptional.isPresent()) {
-            Movie m = movieOptional.get();
-            return new MovieResponseDTO(
-                    m.getTmdbId(),
-                    m.getTitle(),
-                    m.getOriginalTitle(),
-                    m.getOverview(),
-                    m.getOriginalLanguage(),
-                    m.getPopularity(),
-                    m.getPosterPath(),
-                    m.getBackdropPath(),
-                    m.getReleaseDate(),
-                    m.getVoteAverage()
-            );
-        }
+                    return movieRepository.save(movie);
+                });
+    }
 
-
-        String bearerToken = "Bearer " + apiToken;
-
-        MovieResponseDTO response = tmdbSearchClient.getMovie(bearerToken, tmdbId);
-
-        Movie movie = new Movie();
-
-        movie.setTmdbId(response.id());
-        movie.setTitle(response.title());
-        movie.setOriginalTitle(response.originalTitle());
-git        movie.setOverview(response.overview());
-        movie.setPopularity(response.popularity());
-        movie.setVoteAverage(response.voteAverage());
-        movie.setReleaseDate(response.releaseDate());
-        movie.setPosterPath(response.posterPath());
-        movie.setBackdropPath(response.backdropPath());
-
-        movieRepository.save(movie);
-
-        return response;
-
-        }
 }

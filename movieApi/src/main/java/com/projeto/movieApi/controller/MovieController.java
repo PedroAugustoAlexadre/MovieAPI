@@ -33,13 +33,4 @@ public class MovieController {
 
         return ResponseEntity.ok(movie);
     }
-
-    @PostMapping("/{id}")
-    public ResponseEntity<MovieResponseDTO> saveMovie(@PathVariable Long id) {
-
-        MovieResponseDTO movie = movieService.saveMovie(id);
-
-        return ResponseEntity.ok(movie);
-    }
-
 }
