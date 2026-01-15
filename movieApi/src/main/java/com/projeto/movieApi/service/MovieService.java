@@ -58,6 +58,7 @@ public class MovieService {
                     movie.setOriginalTitle(response.originalTitle());
                     movie.setOverview(response.overview());
                     movie.setOriginalLanguage(response.originalLanguage());
+                    movie.setPopularity(response.popularity());
                     movie.setPosterPath(response.posterPath());
                     movie.setBackdropPath(response.backdropPath());
                     movie.setReleaseDate(response.releaseDate());

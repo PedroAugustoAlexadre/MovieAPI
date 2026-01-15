@@ -1,5 +1,8 @@
 package com.projeto.movieApi.service;
 
+import com.projeto.movieApi.dto.MovieResponseDTO;
+import com.projeto.movieApi.dto.UserDTO;
+import com.projeto.movieApi.dto.UserMovieDTO;
 import com.projeto.movieApi.model.Movie;
 import com.projeto.movieApi.model.User;
 import com.projeto.movieApi.model.UserMovie;
@@ -27,7 +30,7 @@ public class UserMovieService {
 
 
     @Transactional
-    public UserMovie addMovieToList(Long userId, Long tmdbId, WatchStatus status) {
+    public UserMovieDTO addMovieToList(Long userId, Long tmdbId, WatchStatus status) {
 
         User user = userService.findById(userId);
         Movie movie = movieService.getOrCreateMovie(tmdbId);
@@ -47,7 +50,26 @@ public class UserMovieService {
             userMovie.setStatus(status);
         }
 
-        return userMovieRepository.save(userMovie);
+        userMovieRepository.save(userMovie);
+
+        UserDTO userDTO = new UserDTO(user.getUsername(), user.getEmail(), user.getPassword());
+
+        MovieResponseDTO movieResponseDTO = new MovieResponseDTO(
+                movie.getId(),
+                movie.getTitle(),
+                movie.getOriginalTitle(),
+                movie.getOverview(),
+                movie.getOriginalLanguage(),
+                movie.getPopularity(),
+                movie.getPosterPath(),
+                movie.getBackdropPath(),
+                movie.getReleaseDate(),
+                movie.getVoteAverage()
+                );
+
+        UserMovieDTO userMovieDTO = new UserMovieDTO(userMovie.getId(), userDTO, movieResponseDTO, status);
+
+        return userMovieDTO;
     }
 
 }

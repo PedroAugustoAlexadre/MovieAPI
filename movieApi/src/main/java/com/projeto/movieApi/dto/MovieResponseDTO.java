@@ -26,6 +26,6 @@ public record MovieResponseDTO(
         String releaseDate,
 
         @JsonProperty("vote_average")
-        Double voteAverage // Adicionei esse, pois é muito usado para mostrar a nota!
+        Double voteAverage
 ) {
 }
