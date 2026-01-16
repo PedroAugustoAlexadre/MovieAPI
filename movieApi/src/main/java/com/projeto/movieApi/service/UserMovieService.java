@@ -112,7 +112,7 @@ public class UserMovieService {
     }
 
     @Transactional
-    public void deleteMovieMyList(Long userMovieId) {
+    public void  deleteMovieMyList(Long userMovieId) {
         if (!userMovieRepository.existsById(userMovieId)) {
             throw new RuntimeException("Item not found in your list!");
         }
